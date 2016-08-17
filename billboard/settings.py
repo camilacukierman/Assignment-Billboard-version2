@@ -1,5 +1,5 @@
 """
-Django settings for {{ billboard }} project on Heroku. Fore more info, see:
+Django settings for billboard project on Heroku. Fore more info, see:
 https://github.com/heroku/heroku-django-template
 
 For more information on this file, see
@@ -29,15 +29,12 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
+    'comments.apps.CommentsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # Disable Django's own staticfiles handling in favour of WhiteNoise, for
-    # greater consistency between gunicorn and `./manage.py runserver`. See:
-    # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
 
@@ -53,7 +50,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = '{{ billboard }}.urls'
+ROOT_URLCONF = 'billboard.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = '{{ billboard }}.wsgi.application'
+WSGI_APPLICATION = 'billboard.wsgi.application'
 
 
 # Database
@@ -104,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC+2'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
