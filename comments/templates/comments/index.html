@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>index</title>
 
-    
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'comments/css/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'comments/js/js.js' %}"></script>
 
 
 </head>
@@ -23,19 +27,17 @@
     <p>No polls are available.</p>
 {% endif %}
 
-<button type="submit">add your post</button>
-
-
-<form method="post" action="/postcomment" >
+<button type="submit" id="show" name="want_to_post">add your post</button>
+<div class="display_form">
+<form method="post" action="/postcomment" name="form" >
     {% csrf_token %}
-    <input type="text" name="author_text" placeholder="title"> <br>
-    <input type="text" name="title_text" placeholder="message"><br>
-    <input type="text" name="message_text" placeholder="author"><br>
+    <input type="text" name="author_text" placeholder="title" required> <br>
+    <input type="text" name="title_text" placeholder="message" required><br>
+    <input type="text" name="message_text" placeholder="author" required><br>
     <button type="submit">POST</button>
-    <button type="submit">DELETE</button>
-
+    <button type="button" id="cancel">CANCEL</button>
 </form>
-
+    </div>
 
 </body>
 </html>
