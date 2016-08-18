@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+
+{% if latest_message %}
+    <ul>
+    {% for message in latest_message %}
+        <li>{{ message.title_text }}<br>
+         {{ message.message_text }}<br>
+         {{ message.author_text }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+<button type="submit">add your post</button>
+
+
+<form method="post" action="/postcomment" >
+
+    <input type="text" placeholder="title"> <br>
+    <input type="text" placeholder="message"><br>
+    <input type="text" placeholder="author"><br>
+    <button type="submit">POST</button>
+    <button type="submit">DELETE</button>
+
+</form>
+
+
+</body>
+</html>
+
+
