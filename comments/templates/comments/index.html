@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>index</title>
+
+    
+
+
 </head>
 <body>
 
 {% if latest_message %}
     <ul>
     {% for message in latest_message %}
-        <li>{{ message.title_text }}<br>
+        <li>{{ message.pub_date }}<br>
+            {{ message.title_text }}<br>
          {{ message.message_text }}<br>
          {{ message.author_text }}</li>
     {% endfor %}
@@ -22,10 +27,10 @@
 
 
 <form method="post" action="/postcomment" >
-
-    <input type="text" placeholder="title"> <br>
-    <input type="text" placeholder="message"><br>
-    <input type="text" placeholder="author"><br>
+    {% csrf_token %}
+    <input type="text" name="author_text" placeholder="title"> <br>
+    <input type="text" name="title_text" placeholder="message"><br>
+    <input type="text" name="message_text" placeholder="author"><br>
     <button type="submit">POST</button>
     <button type="submit">DELETE</button>
 
