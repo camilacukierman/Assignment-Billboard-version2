@@ -9,35 +9,60 @@
     <link rel="stylesheet" type="text/css" href="{% static 'comments/css/style.css' %}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{% static 'comments/js/js.js' %}"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
-<body>
+<body >
+
+ <div  class="col-md-3 "> </div>
+<div class="col-md-6 ">
+
+
+<div class="maintitle">BILBOARD</div>
 
 {% if latest_message %}
-    <ul>
-    {% for message in latest_message %}
-        <li>{{ message.pub_date }}<br>
-            {{ message.title_text }}<br>
-         {{ message.message_text }}<br>
-         {{ message.author_text }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
 
-<button type="submit" id="show" name="want_to_post">add your post</button>
-<div class="display_form">
+    {% for message in latest_message %}
+
+
+<div class="message-box">
+       <div class="date"> {{ message.pub_date }}</div><br>
+          <div class="title">  {{ message.title_text }}</div><br>
+        <div class="massage"> {{ message.message_text }}</div><br>
+       <div class="author">  {{ message.author_text }}</div>
+    </div>
+
+
+    {% endfor %}
+{% endif %}
+<div  class="col-md-3 "> </div>
+   <div class="border_add">
+<button type="submit" id="show" name="want_to_post" class="add_comment plus_btn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+</div>
+
+
+<div class="display_form col-md-6">
 <form method="post" action="/postcomment" name="form" >
     {% csrf_token %}
-    <input type="text" name="author_text" placeholder="title" required> <br>
-    <input type="text" name="title_text" placeholder="message" required><br>
-    <input type="text" name="message_text" placeholder="author" required><br>
-    <button type="submit">POST</button>
-    <button type="button" id="cancel">CANCEL</button>
+    <div class="border_post">
+    <input type="text" name="author_text" placeholder="title" class="input_margin"  required> <br>
+    <input type="text" name="title_text" placeholder="message" class="input_margin" required><br>
+    <input type="text" name="message_text" placeholder="author" class="input_margin" required><br>
+        </div>
+
+   <div class="border_add">
+       <div class="plus_btn">
+    <button type="submit" class="post_btn"><i class="fa fa-check" aria-hidden="true"></i></button>
+    <button type="button" id="cancel"><i class="fa fa-times" aria-hidden="true"></i></button>
+       </div>
+        </div>
+
 </form>
     </div>
+
+    </div>
+<div  class="col-md-3 "> </div>
 
 </body>
 </html>

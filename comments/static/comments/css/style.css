@@ -1,5 +1,89 @@
+@import url(//fonts.googleapis.com/css?family=Poiret+One);
+@import url(//fonts.googleapis.com/css?family=Anton);
+@import url(//fonts.googleapis.com/css?family=Pinyon+Script);
+
 
 .display_form {
-
      display: none;
+}
+
+.date{
+    font-family: Poiret One;
+    font-size : 16px;
+    Color : black;
+}
+
+.title {
+    font-family: Anton;
+    font-size : 30px;
+    Color:#00b7ef;
+}
+
+.message {
+    font-family: Arial;
+    font-size : 16px;
+    Color:#c1bfc0;
+}
+
+.author {
+    font-family: Pinyon Script;
+    font-size : 24px;
+    Color : black
+}
+
+.maintitle {
+    font-family: Anton;
+    font-size : 40px;
+    Color : black;
+}
+
+.message-box{
+    width: 800px;
+    Height:auto;
+    border:3px #00b7ef solid;
+    margin:20px;
+}
+
+.add_comment{
+    font-familyt: font awesome plus;
+    font-size : 16px;
+    background-color : #66CDAA;
+    Color: white;
+    Radius :3px;
+    Cursor: pointer;
+}
+
+.border_add{
+    Border: 2px  black dashed;
+    margin: 20px;
+    width: 800px;
+    Height: auto;
+}
+
+.border_post{
+    Border: 2px  #00b7ef dashed;
+    margin: 20px;
+    width: 800px;
+    Height: auto;
+}
+
+.post_btn {
+    font-size : 16px;
+    background-color: #66CDAA;
+    Cursor: pointer;
+}
+
+.cancel_btn {
+    font-size : 16px;
+    background-color: red;
+    Cursor: pointer;
+}
+
+.plus_btn {
+    margin-left: 50%;
+}
+
+.input_margin{
+      margin: 5px 0px;
+    width: 100%;
 }
