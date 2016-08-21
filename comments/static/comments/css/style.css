@@ -11,6 +11,11 @@
     font-family: Poiret One;
     font-size : 16px;
     Color : black;
+    width: 180px;
+    text-align: center;
+    background-color: white;
+    margin-top: -10px;
+    margin-left: 5px;
 }
 
 .title {
@@ -28,17 +33,20 @@
 .author {
     font-family: Pinyon Script;
     font-size : 24px;
-    Color : black
+    Color : black;
+    text-align: right;
+    padding: 0px 10px;
 }
 
 .maintitle {
+    text-align: center;
     font-family: Anton;
     font-size : 40px;
     Color : black;
 }
 
 .message-box{
-    width: 800px;
+    width: auto;
     Height:auto;
     border:3px #00b7ef solid;
     margin:20px;
@@ -56,14 +64,14 @@
 .border_add{
     Border: 2px  black dashed;
     margin: 20px;
-    width: 800px;
+    width: auto;
     Height: auto;
 }
 
 .border_post{
     Border: 2px  #00b7ef dashed;
     margin: 20px;
-    width: 800px;
+    width: auto;
     Height: auto;
 }
 
